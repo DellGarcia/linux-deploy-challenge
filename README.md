@@ -9,8 +9,9 @@ Para este projeto escolhi fazer a implantação no Ubuntu Server, então os coma
 ### Criando a máquina virtual
 Para criar a máquina virtual utilizei o software do Virtual Box e baixei a imagem do Ubuntu Server, segue abaixo o link caso deseje conferir:
 
-> [Ubuntu Server](https://ubuntu.com/download/server)</br>
-> [Virtual Box](https://www.virtualbox.org/)
+* [Virtual Box](https://www.virtualbox.org/)
+* [Ubuntu Server](https://ubuntu.com/download/server)</br>
+ 
 
 Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A única configuração relevante foi fazer um redirecimento de portas para conseguir acessar a porta do servidor de fora da VM. Segue uma imagem de como ficou minha configuração.
 
