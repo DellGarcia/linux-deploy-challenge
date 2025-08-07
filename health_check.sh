@@ -7,7 +7,7 @@ if [ -z $head ]
 elif [ $head -ne 200 ]
     then
         echo "Aplicação retornou status inesperado: $head"
-else [ $head]
+else [ $head ]
     then
         echo "Aplicação rodando"
 fi
