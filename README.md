@@ -15,7 +15,7 @@ Para criar a máquina virtual utilizei o software do Virtual Box e baixei a imag
 
 Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A única configuração relevante foi fazer um redirecimento de portas para conseguir acessar a porta do servidor de fora da VM. Segue uma imagem de como ficou minha configuração.
 
-<!--  Colocar a imagem aqui -->
+<img width="991" height="586" alt="image" src="https://github.com/user-attachments/assets/12343ba3-f169-4424-a93a-046a0fb222c0" />
 
 Siga o passo a passo do instalador do Ubuntu Server para poder prosseguir neste guia.
 
