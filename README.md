@@ -19,17 +19,17 @@ Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A ún
 
 Siga o passo a passo do instalador do Ubuntu Server para poder prosseguir neste guia.
 
-## 📥 Instalando pacotes
+## :toolbox: Instalando Pacotes / Preparando Ambiente
 Agora com a instalação do sistema na máquina virtual completa podemos instalar e configurar os pacotes que serão utilizados.
 
-#### Instalando o Nginx
+### Instalando o Nginx
 O comando abaixo instala o Nginx no Ubuntu Server:
 ```bash
 sudo apt install nginx
 
 ```
 
-#### Checando status do Nginx
+### Checando status do Nginx
 Após a instalação normalmente o serviço do Nginx já esta ativo e funcionando, como comando abaixo é possível checar o status:
 ```bash
 sudo systemctl status nginx
@@ -37,5 +37,19 @@ sudo systemctl status nginx
 
 Caso deseje seguindo essa mesma estrutura é possível parar, iniciar ou reiniciar o Nginx, basta trocar a palavra **"status"** por **stop**, **start** ou **restart**.
 
+### Arrumando a hora do servidor :watch:
+Essa sessão é para ajustar o timezone para ficar condizente com o horário de brasilia.
+Basta executar o seguinte comando:
 
+```bash
+sudo timedatectl set-timezone Etc/GMT+3
+```
 
+### Variáveis de ambiente
+Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguint estrutura:
+
+```bash
+DISCORD_WEBHOOK=
+```
+
+Feito isso isso basta adicionar os valores necessário, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
