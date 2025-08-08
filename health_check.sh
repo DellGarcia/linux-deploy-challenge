@@ -1,7 +1,5 @@
 source $(dirname "$0")/discord_hook_notifier.sh
 
-echo $(pwd)
-
 now="$(date +"%D %T")"
 log_folder=/var/log/ngx_server/
 mkdir -p $log_folder

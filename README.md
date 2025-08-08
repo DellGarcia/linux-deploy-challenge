@@ -53,3 +53,19 @@ DISCORD_WEBHOOK=
 ```
 
 Feito isso isso basta adicionar os valores necessário, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
+
+### Configurando o Crontab
+Nessa sessão vamos agendar o script health_check.sh para executar a cada 1 minuto, dessa forma ele estará sempre checando se a aplicação esta funcionando.
+
+Para isso vamos precisar editar o crontab do root, o seguinte comando permite editá-lo:
+
+```bash
+sudo crontab -e
+```
+
+Feito isso basta adicionar a linha abaixo:
+
+```bash
+* * * * * /usr/bin/bash /home/<user>/linux-deploy-challenge/health_check.sh
+```
+
