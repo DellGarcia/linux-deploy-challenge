@@ -45,6 +45,21 @@ Basta executar o seguinte comando:
 sudo timedatectl set-timezone Etc/GMT+3
 ```
 
+### Clonando esse repositório
+Um dos jeitos mais práticos de colocar esse projeto para funcionar é clonando ele usando o git clone, então vai ser necessário instalar o git no servidor, o que pode ser feito com o seguinte comando:
+
+```bash
+sudo apt install git
+```
+
+Com o git instalado agora podemos clonar o repositório com o comando:
+
+```bash
+git clone https://github.com/DellGarcia/linux-deploy-challenge.git
+```
+
+Pronto agora o projeto já esta dentro do servidor!
+
 ### Variáveis de ambiente
 Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguint estrutura:
 
