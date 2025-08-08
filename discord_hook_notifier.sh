@@ -1,4 +1,4 @@
-source ./.env.sh
+source $(dirname "$0")/.env.sh
 
 notifyOnDiscord() 
 {
