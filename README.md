@@ -60,6 +60,15 @@ git clone https://github.com/DellGarcia/linux-deploy-challenge.git
 
 Pronto agora o projeto já esta dentro do servidor!
 
+### Configurando variáveis de ambiente
+Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguint estrutura:
+
+```bash
+DISCORD_WEBHOOK=
+```
+
+Feito isso isso basta adicionar os valores necessário, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
+
 ### Executando o script de deploy dos arquivos
 O script **deploy.sh** automatiza o processo de copiar os arquivos para o local correto, no caso o **nginx.conf** e os arquivos dentro da pasta **website**. Basta executar o seguinte comando:
 
@@ -68,16 +77,6 @@ sudo bash ./deploy.sh
 ```
 
 Com isso o nginx subirá na porta 80 (Mude no nginx.conf caso a porta esteja ocupada), e será possível visualizar o conteúdo do site acessando pelo navegador a porta onde foi realizado o port fowarding no meu caso foi na porta 8888, então acessei http://localhost:8888.
-
-
-### Variáveis de ambiente
-Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguint estrutura:
-
-```bash
-DISCORD_WEBHOOK=
-```
-
-Feito isso isso basta adicionar os valores necessário, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
 
 ### Configurando o Crontab
 Nessa sessão vamos agendar o script health_check.sh para executar a cada 1 minuto, dessa forma ele estará sempre checando se a aplicação esta funcionando.
