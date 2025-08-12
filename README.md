@@ -19,16 +19,16 @@ Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A ún
 
 Siga o passo a passo do instalador do Ubuntu Server para poder prosseguir neste guia.
 
-## :toolbox: Instalando Pacotes / Preparando Ambiente
+## :toolbox: Instalando o projeto
 Agora com a instalação do sistema na máquina virtual completa podemos instalar e configurar os pacotes que serão utilizados.
 
-### Instalando o Nginx
+### 1 - Instalando o Nginx
 O comando abaixo instala o Nginx no Ubuntu Server:
 ```bash
 sudo apt install nginx
 ```
 
-### Checando status do Nginx
+### 2 - Checando status do Nginx
 Após a instalação normalmente o serviço do Nginx já esta ativo e funcionando, como comando abaixo é possível checar o status:
 ```bash
 sudo systemctl status nginx
@@ -36,7 +36,7 @@ sudo systemctl status nginx
 
 Caso deseje seguindo essa mesma estrutura é possível parar, iniciar ou reiniciar o Nginx, basta trocar a palavra **"status"** por **stop**, **start** ou **restart**.
 
-### Arrumando a hora do servidor :watch:
+### 3 - Arrumando a hora do servidor
 Essa sessão é para ajustar o timezone para ficar condizente com o horário de brasilia.
 Basta executar o seguinte comando:
 
@@ -44,7 +44,7 @@ Basta executar o seguinte comando:
 sudo timedatectl set-timezone Etc/GMT+3
 ```
 
-### Clonando esse repositório
+### 4 - Clonando esse repositório
 Um dos jeitos mais práticos de colocar esse projeto para funcionar é clonando ele usando o git clone, então vai ser necessário instalar o git no servidor, o que pode ser feito com o seguinte comando:
 
 ```bash
@@ -58,13 +58,14 @@ git clone https://github.com/DellGarcia/linux-deploy-challenge.git
 ```
 
 Utilize o cd para entrar na pasta do projeto:
+
 ```bash
 cd linux-deploy-challenge
 ```
 
 Pronto agora o projeto já esta dentro do servidor!
 
-### Configurando variáveis de ambiente
+### 5 - Configurando variáveis de ambiente
 Para o correto funcionamento do servidor é necessário criar o arquivo **.env.sh** na pasta **/scripts**, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguinte estrutura:
 
 ```bash
@@ -77,7 +78,7 @@ LOG_ERROR_FILENAME=
 
 Feito isso isso basta adicionar os valores necessários de acordo com seu projeto, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
 
-### Executando o script de deploy dos arquivos
+### 6 - Executando o script de deploy dos arquivos
 O script **deploy.sh** automatiza o processo de copiar os arquivos para o local correto, no caso o **nginx.conf** e os arquivos dentro da pasta **website**. Basta executar o seguinte comando:
 
 ```bash
@@ -89,6 +90,8 @@ Com isso o nginx subirá na porta 80 (Mude no nginx.conf caso a porta esteja ocu
 Segue abaixo imagem do resultado no navegador:
 <img width="1843" height="946" alt="image" src="https://github.com/user-attachments/assets/aa609066-c423-4907-a4a9-da06133f595f" />
 
+
+## :computer: Monitorando funcionamento do Servidor
 
 ### Configurando o Crontab
 Nessa sessão vamos agendar o script de monitoramento o **health_check.sh** para executar a cada 1 minuto, dessa forma ele estará sempre checando se a aplicação esta funcionando.
