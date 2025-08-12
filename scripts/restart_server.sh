@@ -1,10 +1,15 @@
 source $(dirname "$0")/ping_server.sh
+source $(dirname "$0")/discord_hook_notifier.sh
 source $(dirname "$0")/logger.sh
 source $(dirname "$0")/.env.sh
 
 tryRestartServer()
 {
-    logToFile "$LOG_ERROR_FILENAME" "(Reiniciando)" "Tentando reiniciar o Servidor."
+    msg1="(Reiniciando)"
+    msg2="Tentando reiniciar o Servidor."
+    logToFile "$LOG_ERROR_FILENAME" \(Reiniciando\) "$ms2"
+    notifyOnDiscord NGX_DROID "$msg1" "$msg2"
+
     systemctl restart nginx
 
     head=$( pingServer )
