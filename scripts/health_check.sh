@@ -1,7 +1,8 @@
+source $(dirname "$0")/.env.sh
 source $(dirname "$0")/discord_hook_notifier.sh
 source $(dirname "$0")/logger.sh
 
-head=$(curl -I -s -# http://localhost:8888 | head -n 1 | cut -d $' ' -f2)
+head=$(curl -I -s -# http://localhost:$SERVER_PORT | head -n 1 | cut -d $' ' -f2)
 
 if [ -z $head ]
     then
