@@ -63,6 +63,7 @@ Pronto agora o projeto já esta dentro do servidor!
 Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguinte estrutura:
 
 ```bash
+SERVER_PORT=
 DISCORD_WEBHOOK=
 LOG_FOLDER=
 ```
