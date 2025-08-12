@@ -1,7 +1,7 @@
 source $(dirname "$0")/discord_hook_notifier.sh
 source $(dirname "$0")/logger.sh
 
-head=$(curl -I -s -# http://localhost:80 | head -n 1 | cut -d $' ' -f2)
+head=$(curl -I -s -# http://localhost:8888 | head -n 1 | cut -d $' ' -f2)
 
 if [ -z $head ]
     then
@@ -20,5 +20,7 @@ elif [ $head -ne 200 ]
         logToFile health_check_error.log "$msg1" "$msg2"
         notifyOnDiscord NGX_DROID "$msg1" "$msg2"
 else
-    logToFile health_check.log "(SERVIDOR OK)" "O servidor está funcionando como esperado."
+    msg1="(SERVIDOR OK)"
+    msg2="O servidor está funcionando como esperado."
+    logToFile health_check.log "$msg1" "$msg2"
 fi
