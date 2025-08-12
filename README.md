@@ -84,10 +84,14 @@ O script **deploy.sh** automatiza o processo de copiar os arquivos para o local 
 sudo bash ./scripts/deploy.sh
 ```
 
-Com isso o nginx subirá na porta 80 (Mude no nginx.conf caso a porta esteja ocupada), e será possível visualizar o conteúdo do site acessando pelo navegador a porta onde foi realizado o port fowarding no meu caso foi na porta 8888, então acessei http://localhost:8888.
+Com isso o nginx subirá na porta 80 (Mude no nginx.conf caso a porta esteja ocupada), e será possível visualizar o conteúdo do site acessando pelo navegador a porta onde foi realizado o port fowarding no meu caso foi na porta 8888, então acessei http://localhost:8888. 
+
+Segue abaixo imagem do resultado no navegador:
+<img width="1843" height="946" alt="image" src="https://github.com/user-attachments/assets/aa609066-c423-4907-a4a9-da06133f595f" />
+
 
 ### Configurando o Crontab
-Nessa sessão vamos agendar o script health_check.sh para executar a cada 1 minuto, dessa forma ele estará sempre checando se a aplicação esta funcionando.
+Nessa sessão vamos agendar o script de monitoramento o **health_check.sh** para executar a cada 1 minuto, dessa forma ele estará sempre checando se a aplicação esta funcionando.
 
 Para isso vamos precisar editar o crontab do root, o seguinte comando permite editá-lo:
 
@@ -100,4 +104,13 @@ Feito isso basta adicionar a linha abaixo:
 ```bash
 * * * * * /usr/bin/bash /home/<user>/linux-deploy-challenge/scritps/health_check.sh
 ```
+
+Em caso da aplicação estar offline, o **health_check.sh** chama o **restart_server.sh** que vai tentar reiniciar o Nginx automaticamente, ambos os scripts geram logs referentes a sua execução e enviam notificações no webhook do Discord quando necessário.
+
+Resultado das notificações no Discord:
+<img width="1814" height="851" alt="image" src="https://github.com/user-attachments/assets/f078b45d-2c78-4435-a5ec-b3b18ee96f57" />
+
+
+Logs gerados no servidor:
+<img width="951" height="622" alt="image" src="https://github.com/user-attachments/assets/66461588-0d30-46ca-96f9-0daab22f0900" />
 
