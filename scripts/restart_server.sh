@@ -5,9 +5,9 @@ source $(dirname "$0")/.env.sh
 
 tryRestartServer()
 {
-    msg1="(Reiniciando)"
+    msg1="(REINICIANDO)"
     msg2="Tentando reiniciar o Servidor."
-    logToFile "$LOG_ERROR_FILENAME" \(Reiniciando\) "$ms2"
+    logToFile "$LOG_ERROR_FILENAME" "$msg1" "$ms2"
     notifyOnDiscord NGX_DROID "$msg1" "$msg2"
 
     systemctl restart nginx
@@ -16,11 +16,17 @@ tryRestartServer()
 
     if [ -z $head ]
         then
-            logToFile "$LOG_ERROR_FILENAME" "(Falha)" "Não foi possíveil reiniciar."
+            msg1="(FALHA)"
+            msg2="Não foi possíveil reiniciar o servidor."
+            logToFile "$LOG_ERROR_FILENAME" "$msg1" "$msg2"
+            notifyOnDiscord NGX_DROID "$msg1" "$msg2"
     elif [ $head -ne 200 ]
         then
             logToFile "$LOG_ERROR_FILENAME" "(Status inesperado)" "Servidor retornou código $head"
     else      
-        logToFile "$LOG_FILENAME" "(Servidor Reiniciado)" "O servidor voltou a ativa"
+        msg1="(Servidor Reiniciado)"
+        msg2="O servidor voltou a ativa"
+        logToFile "$LOG_FILENAME" "$msg1" "$msg2"
+        notifyOnDiscord NGX_DROID "$msg1" "$msg2"
     fi
 }
