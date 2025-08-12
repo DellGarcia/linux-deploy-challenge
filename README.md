@@ -1,4 +1,4 @@
-# Linux Deploy Challenge :rocket:
+# :rocket: Linux Deploy Challenge 
 
 Este é um projeto desenvolvido durante meu estágio na Compass UOL, ele tem como objetivo subir um servidor WEB com Nginx em uma máquina virtual utilizando sistema GNU/Linux.
 
