@@ -1,7 +1,7 @@
 source $(dirname "$0")/.env.sh
 
 now="$(date +"%D %T")"
-mkdir -p $log_folder
+mkdir -p $LOG_FOLDER
 
 
 logToFile()
