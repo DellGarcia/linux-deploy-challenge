@@ -26,14 +26,3 @@ notifyOnDiscord()
                 -s \
                 $DISCORD_WEBHOOK)
 }
-
-# {
-#   "content": "This is a test message sent from Postman!",
-#   "username": "Postman Bot",
-#   "embeds": [
-#     {
-#       "title": "API Test Result",
-#       "description": "The test was successful."
-#     }
-#   ]
-# }
