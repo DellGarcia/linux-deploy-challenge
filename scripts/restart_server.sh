@@ -22,11 +22,11 @@ tryRestartServer()
             notifyOnDiscord NGX_DROID "$msg1" "$msg2"
     elif [ $head -ne 200 ]
         then
-            logToFile "$LOG_ERROR_FILENAME" "(Status inesperado)" "Servidor retornou código $head"
+            logToFile "$LOG_ERROR_FILENAME" "(STATUS INESPERADO)" "Servidor retornou código $head"
     else      
-        msg1="(Servidor Reiniciado)"
+        msg1="(SERVIDOR REINICIADO)"
         msg2="O servidor voltou a ativa"
-        logToFile "$LOG_FILENAME" "$msg1" "$msg2"
+        logToFile "$LOG_ERROR_FILENAME" "$msg1" "$msg2"
         notifyOnDiscord NGX_DROID "$msg1" "$msg2"
     fi
 }
