@@ -4,7 +4,7 @@ source $(dirname "$0")/.env.sh
 
 tryRestartServer()
 {
-    logToFile $LOG_ERROR_FILENAME "Reiniciando" "Tentando reiniciar o Servidor."
+    logToFile $LOG_ERROR_FILENAME "(Reiniciando)" "Tentando reiniciar o Servidor."
     systemctl restart nginx
 
     head=$( pingServer )

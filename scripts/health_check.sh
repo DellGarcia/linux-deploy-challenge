@@ -1,6 +1,7 @@
 source $(dirname "$0")/ping_server.sh
 source $(dirname "$0")/discord_hook_notifier.sh
 source $(dirname "$0")/logger.sh
+source $(dirname "$0")/restart_server.sh
 
 head=$( pingServer )
 
@@ -12,6 +13,7 @@ if [ -z $head ]
         logToFile "$LOG_ERROR_FILENAME" "$msg1" "$msg2"
         notifyOnDiscord NGX_DROID "$msg1" "$msg2"
 
+        tryRestartServer
 elif [ $head -ne 200 ]
     then
         msg1="(PROBLEMA NO SERVIDOR)"
