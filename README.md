@@ -13,9 +13,9 @@ Para criar a máquina virtual utilizei o software do Virtual Box e baixei a imag
 * [Ubuntu Server](https://ubuntu.com/download/server)
  
 
-Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A única configuração relevante foi fazer um redirecimento de portas para conseguir acessar a porta do servidor de fora da VM. Segue uma imagem de como ficou minha configuração.
+Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A única configuração relevante foi fazer um redirecimento de portas para conseguir acessar a porta do servidor de fora da VM, e se desejar pode fazer o mesmo com a porta SSH. Segue uma imagem de como ficou minha configuração.
 
-<img width="991" height="586" alt="image" src="https://github.com/user-attachments/assets/12343ba3-f169-4424-a93a-046a0fb222c0" />
+<img width="1272" height="572" alt="image" src="https://github.com/user-attachments/assets/f99a9fee-2c84-40d3-8aa3-868b77331a57" />
 
 Siga o passo a passo do instalador do Ubuntu Server para poder prosseguir neste guia.
 
@@ -57,15 +57,22 @@ Com o git instalado agora podemos clonar o repositório com o comando:
 git clone https://github.com/DellGarcia/linux-deploy-challenge.git
 ```
 
+Utilize o cd para entrar na pasta do projeto:
+```bash
+cd linux-deploy-challenge
+```
+
 Pronto agora o projeto já esta dentro do servidor!
 
 ### Configurando variáveis de ambiente
-Para o correto funcionamento do servidor é necessário criar o arquivo .env.sh, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguinte estrutura:
+Para o correto funcionamento do servidor é necessário criar o arquivo **.env.sh** na pasta **/scripts**, onde ficaram armazenadas as variáveis de ambiente. Por razões de segurança esse tipo de arquivo não versionado, mas é bem simples criá-lo, basta ir na pasta do servidor criar um arquivo **.env.sh** e colar a seguinte estrutura:
 
 ```bash
 SERVER_PORT=
 DISCORD_WEBHOOK=
 LOG_FOLDER=
+LOG_FILENAME=
+LOG_ERROR_FILENAME=
 ```
 
 Feito isso isso basta adicionar os valores necessários de acordo com seu projeto, por exemplo o endereço do DISCORD_WEBHOOK, basta colá-lo a frente da variável sem adição de espaços.
