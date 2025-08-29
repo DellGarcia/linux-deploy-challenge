@@ -4,7 +4,15 @@ Este é um projeto desenvolvido durante meu estágio na Compass UOL, ele tem com
 
 
 ## :wrench:  Preparando o ambiente
-Para este projeto escolhi fazer a implantação no Ubuntu Server, então os comandos que vou descrever são voltados para essa distribuição, apesar ser semelhete o processo alguns comandos e passos podem variar conforme sua distribuição.
+Para este projeto escolhi fazer a implantação no Ubuntu Server, então os comandos que vou descrever são voltados para essa distribuição, apesar de ser semelhante alguns comandos podem variar conforme sua distribuição.
+
+### Criando Webhook para o Discord
+
+Este projeto conta com monitoramento e alertas no Discord, então para o correto funcionamento será necessário criar um webhook para o Discord, basta seguir os passos descritos nesse guia do prório Discord e gerar a URL do Webhook:
+
+[Webhooks com Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
+
+A URL do Webhook será requisitada no passo 5 da instalação do projeto.
 
 ### Criando a máquina virtual
 Para criar a máquina virtual utilizei o software do Virtual Box e baixei a imagem do Ubuntu Server, segue abaixo o link caso deseje conferir:
@@ -13,7 +21,7 @@ Para criar a máquina virtual utilizei o software do Virtual Box e baixei a imag
 * [Ubuntu Server](https://ubuntu.com/download/server)
  
 
-Com a ISO do Ubuntu Server basta criar uma VM utilando ela no Virtual Box. A única configuração relevante foi fazer um redirecimento de portas para conseguir acessar a porta do servidor de fora da VM, e se desejar pode fazer o mesmo com a porta SSH. Segue uma imagem de como ficou minha configuração.
+Com a ISO do Ubuntu Server basta criar uma VM utililando ela no Virtual Box. A única configuração relevante foi fazer um redireciomento de portas para conseguir acessar a porta do servidor de fora da VM, e se desejar pode fazer o mesmo com a porta SSH. Segue uma imagem de como ficou minha configuração.
 
 <img width="1272" height="572" alt="image" src="https://github.com/user-attachments/assets/f99a9fee-2c84-40d3-8aa3-868b77331a57" />
 
